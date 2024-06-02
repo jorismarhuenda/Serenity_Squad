@@ -14,6 +14,9 @@
 		EC6AE0942C0C8D4B0082C3B3 /* Serenity_SquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0932C0C8D4B0082C3B3 /* Serenity_SquadTests.swift */; };
 		EC6AE09E2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE09D2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift */; };
 		EC6AE0A02C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */; };
+		EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */; };
+		EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */; };
+		EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		EC6AE0992C0C8D4B0082C3B3 /* Serenity SquadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Serenity SquadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6AE09D2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadUITests.swift; sourceTree = "<group>"; };
 		EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				EC6AE0822C0C8D440082C3B3 /* Serenity_SquadApp.swift */,
+				EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */,
+				EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */,
+				EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
+				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
+				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
+				EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

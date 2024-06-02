@@ -7,14 +7,7 @@
 
 import SwiftUI
 
-struct Color: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct Color_Previews: PreviewProvider {
-    static var previews: some View {
-        Color()
-    }
+extension Color {
+    static let pastelPink = Color(red: 1.0, green: 0.8, blue: 0.8)
+    static let pastelBlue = Color(red: 0.8, green: 0.8, blue: 1.0)
 }

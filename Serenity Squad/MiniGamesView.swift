@@ -15,8 +15,8 @@ struct MiniGamesView: View {
                 .fontWeight(.bold)
                 .padding()
             
-            NavigationLink(destination: Text("Mini-jeu 1")) {
-                Text("Mini-jeu 1")
+            NavigationLink(destination: Game2048View()) {
+                Text("2048")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()
@@ -26,8 +26,8 @@ struct MiniGamesView: View {
             }
             .padding()
 
-            NavigationLink(destination: Text("Mini-jeu 2")) {
-                Text("Mini-jeu 2")
+            NavigationLink(destination: GameFlappyView()) {
+                Text("Flappy")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()

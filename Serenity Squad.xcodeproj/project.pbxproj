@@ -17,6 +17,8 @@
 		EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */; };
 		EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */; };
 		EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */; };
+		EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */; };
+		EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniGamesView.swift; sourceTree = "<group>"; };
+		EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game2048View.swift; sourceTree = "<group>"; };
+		EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlappyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */,
 				EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */,
 				EC6AE0B02C0C946C0082C3B3 /* MiniGamesView.swift */,
+				EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */,
+				EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -268,6 +274,8 @@
 			files = (
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
 				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
+				EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */,
+				EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */,
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
 				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
 				EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */,

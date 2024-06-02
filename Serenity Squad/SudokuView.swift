@@ -14,41 +14,47 @@ struct SudokuView: View {
     @State private var difficulty: Difficulty = .easy
 
     var body: some View {
-        VStack {
-            Text("Sudoku")
-                .font(.largeTitle)
+        ZStack {
+            // Background gradient
+            LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Text("Sudoku")
+                    .font(.largeTitle)
+                    .padding()
+
+                Picker("Difficulty", selection: $difficulty) {
+                    Text("Easy").tag(Difficulty.easy)
+                    Text("Medium").tag(Difficulty.medium)
+                    Text("Hard").tag(Difficulty.hard)
+                }
+                .pickerStyle(SegmentedPickerStyle())
                 .padding()
 
-            Picker("Difficulty", selection: $difficulty) {
-                Text("Easy").tag(Difficulty.easy)
-                Text("Medium").tag(Difficulty.medium)
-                Text("Hard").tag(Difficulty.hard)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-
-            GridStack(rows: 9, columns: 9) { row, col in
-                CellView(value: self.grid[row][col], isFixed: self.fixedGrid[row][col])
-                    .onTapGesture {
-                        if !self.fixedGrid[row][col] {
-                            self.selectedCell = (row, col)
+                GridStack(rows: 9, columns: 9) { row, col in
+                    CellView(value: self.grid[row][col], isFixed: self.fixedGrid[row][col])
+                        .onTapGesture {
+                            if !self.fixedGrid[row][col] {
+                                self.selectedCell = (row, col)
+                            }
                         }
-                    }
-                    .border(self.selectedCell?.row == row && self.selectedCell?.column == col ? Color.blue : Color.gray)
-            }
-            .padding()
-            
-            NumberPadView { number in
-                if let cell = self.selectedCell {
-                    self.grid[cell.row][cell.column] = number
+                        .border(self.selectedCell?.row == row && self.selectedCell?.column == col ? Color.blue : Color.gray)
                 }
-            }
-            .padding()
+                .padding()
+                
+                NumberPadView { number in
+                    if let cell = self.selectedCell {
+                        self.grid[cell.row][cell.column] = number
+                    }
+                }
+                .padding()
 
-            Button("New Game") {
-                self.startNewGame()
+                Button("New Game") {
+                    self.startNewGame()
+                }
+                .padding()
             }
-            .padding()
         }
         .onAppear {
             self.startNewGame()
@@ -142,7 +148,7 @@ struct CellView: View {
             Rectangle()
                 .foregroundColor(isFixed ? Color.gray.opacity(0.3) : Color.white)
             Text(value != 0 ? "\(value)" : "")
-                .foregroundColor(isFixed ? .white : .blue)
+                .foregroundColor(isFixed ? .white : .black)
         }
     }
 }

@@ -15,42 +15,45 @@ struct MiniGamesView: View {
                 .fontWeight(.bold)
                 .padding()
             
-            NavigationLink(destination: Game2048View()) {
-                Text("2048")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(10)
-                    .shadow(color: .gray, radius: 5, x: 0, y: 5)
-            }
-            .padding()
+            VStack(spacing: 20) {
+                NavigationLink(destination: Game2048View()) {
+                    GameButton(title: "2048", backgroundColor: .green)
+                }
 
-            NavigationLink(destination: GameFlappyView()) {
-                Text("Flappy")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.orange)
-                    .cornerRadius(10)
-                    .shadow(color: .gray, radius: 5, x: 0, y: 5)
-            }
-            .padding()
+                NavigationLink(destination: GameFlappyView()) {
+                    GameButton(title: "Flappy", backgroundColor: .orange)
+                }
 
-            NavigationLink(destination: SudokuView()) {
-                Text("Sudoku")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                NavigationLink(destination: SudokuView()) {
+                    GameButton(title: "Sudoku", backgroundColor: .blue)
+                }
+
+                NavigationLink(destination: WordSearchView()) {
+                    GameButton(title: "Word Search", backgroundColor: .purple)
+                }
             }
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct GameButton: View {
+    var title: String
+    var backgroundColor: Color
+
+    var body: some View {
+        Text(title)
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(backgroundColor)
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: 5, x: 0, y: 5)
+            .padding(.horizontal)
     }
 }
 

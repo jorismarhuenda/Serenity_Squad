@@ -20,6 +20,7 @@
 		EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */; };
 		EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */; };
 		EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */; };
+		ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game2048View.swift; sourceTree = "<group>"; };
 		EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlappyView.swift; sourceTree = "<group>"; };
 		EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */,
 				EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */,
 				EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */,
+				ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -277,6 +280,7 @@
 			files = (
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
 				EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */,
+				ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */,
 				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
 				EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */,
 				EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */,

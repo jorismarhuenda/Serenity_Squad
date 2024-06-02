@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SudokuView: View {
     @State private var grid: [[Int]] = Array(repeating: Array(repeating: 0, count: 9), count: 9)
+    @State private var fixedGrid: [[Bool]] = Array(repeating: Array(repeating: false, count: 9), count: 9)
     @State private var selectedCell: (row: Int, column: Int)? = nil
     @State private var difficulty: Difficulty = .easy
 
@@ -27,9 +28,11 @@ struct SudokuView: View {
             .padding()
 
             GridStack(rows: 9, columns: 9) { row, col in
-                CellView(value: self.grid[row][col])
+                CellView(value: self.grid[row][col], isFixed: self.fixedGrid[row][col])
                     .onTapGesture {
-                        self.selectedCell = (row, col)
+                        if !self.fixedGrid[row][col] {
+                            self.selectedCell = (row, col)
+                        }
                     }
                     .border(self.selectedCell?.row == row && self.selectedCell?.column == col ? Color.blue : Color.gray)
             }
@@ -61,7 +64,16 @@ struct SudokuView: View {
         var fullGrid = solveSudoku(generateEmptyGrid())
         let clues = difficulty == .easy ? 36 : (difficulty == .medium ? 27 : 18)
         removeNumbers(&fullGrid, clues: clues)
+        markFixedCells(grid: fullGrid)
         return fullGrid
+    }
+    
+    func markFixedCells(grid: [[Int]]) {
+        for row in 0..<9 {
+            for col in 0..<9 {
+                fixedGrid[row][col] = grid[row][col] != 0
+            }
+        }
     }
     
     func generateEmptyGrid() -> [[Int]] {
@@ -123,13 +135,14 @@ enum Difficulty {
 
 struct CellView: View {
     var value: Int
+    var isFixed: Bool
     
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.white)
+                .foregroundColor(isFixed ? Color.gray.opacity(0.3) : Color.white)
             Text(value != 0 ? "\(value)" : "")
-                .foregroundColor(.black)
+                .foregroundColor(isFixed ? .white : .blue)
         }
     }
 }

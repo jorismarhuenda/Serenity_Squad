@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0822C0C8D440082C3B3 /* Serenity_SquadApp.swift */; };
+		EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0842C0C8D440082C3B3 /* ContentView.swift */; };
+		EC6AE0872C0C8D4B0082C3B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */; };
+		EC6AE08A2C0C8D4B0082C3B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6AE0892C0C8D4B0082C3B3 /* Preview Assets.xcassets */; };
+		EC6AE0942C0C8D4B0082C3B3 /* Serenity_SquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0932C0C8D4B0082C3B3 /* Serenity_SquadTests.swift */; };
+		EC6AE09E2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE09D2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift */; };
+		EC6AE0A02C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC6AE0902C0C8D4B0082C3B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6AE0772C0C8D440082C3B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6AE07E2C0C8D440082C3B3;
+			remoteInfo = "Serenity Squad";
+		};
+		EC6AE09A2C0C8D4B0082C3B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6AE0772C0C8D440082C3B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC6AE07E2C0C8D440082C3B3;
+			remoteInfo = "Serenity Squad";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC6AE07F2C0C8D440082C3B3 /* Serenity Squad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Serenity Squad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6AE0822C0C8D440082C3B3 /* Serenity_SquadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadApp.swift; sourceTree = "<group>"; };
+		EC6AE0842C0C8D440082C3B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC6AE0892C0C8D4B0082C3B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EC6AE08F2C0C8D4B0082C3B3 /* Serenity SquadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Serenity SquadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6AE0932C0C8D4B0082C3B3 /* Serenity_SquadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadTests.swift; sourceTree = "<group>"; };
+		EC6AE0992C0C8D4B0082C3B3 /* Serenity SquadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Serenity SquadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6AE09D2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadUITests.swift; sourceTree = "<group>"; };
+		EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serenity_SquadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC6AE07C2C0C8D440082C3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE08C2C0C8D4B0082C3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE0962C0C8D4B0082C3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC6AE0762C0C8D440082C3B3 = {
+			isa = PBXGroup;
+			children = (
+				EC6AE0812C0C8D440082C3B3 /* Serenity Squad */,
+				EC6AE0922C0C8D4B0082C3B3 /* Serenity SquadTests */,
+				EC6AE09C2C0C8D4B0082C3B3 /* Serenity SquadUITests */,
+				EC6AE0802C0C8D440082C3B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC6AE0802C0C8D440082C3B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC6AE07F2C0C8D440082C3B3 /* Serenity Squad.app */,
+				EC6AE08F2C0C8D4B0082C3B3 /* Serenity SquadTests.xctest */,
+				EC6AE0992C0C8D4B0082C3B3 /* Serenity SquadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC6AE0812C0C8D440082C3B3 /* Serenity Squad */ = {
+			isa = PBXGroup;
+			children = (
+				EC6AE0822C0C8D440082C3B3 /* Serenity_SquadApp.swift */,
+				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
+				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
+				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
+			);
+			path = "Serenity Squad";
+			sourceTree = "<group>";
+		};
+		EC6AE0882C0C8D4B0082C3B3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EC6AE0892C0C8D4B0082C3B3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EC6AE0922C0C8D4B0082C3B3 /* Serenity SquadTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC6AE0932C0C8D4B0082C3B3 /* Serenity_SquadTests.swift */,
+			);
+			path = "Serenity SquadTests";
+			sourceTree = "<group>";
+		};
+		EC6AE09C2C0C8D4B0082C3B3 /* Serenity SquadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC6AE09D2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift */,
+				EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */,
+			);
+			path = "Serenity SquadUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC6AE07E2C0C8D440082C3B3 /* Serenity Squad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC6AE0A32C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity Squad" */;
+			buildPhases = (
+				EC6AE07B2C0C8D440082C3B3 /* Sources */,
+				EC6AE07C2C0C8D440082C3B3 /* Frameworks */,
+				EC6AE07D2C0C8D440082C3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Serenity Squad";
+			productName = "Serenity Squad";
+			productReference = EC6AE07F2C0C8D440082C3B3 /* Serenity Squad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC6AE08E2C0C8D4B0082C3B3 /* Serenity SquadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC6AE0A62C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity SquadTests" */;
+			buildPhases = (
+				EC6AE08B2C0C8D4B0082C3B3 /* Sources */,
+				EC6AE08C2C0C8D4B0082C3B3 /* Frameworks */,
+				EC6AE08D2C0C8D4B0082C3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC6AE0912C0C8D4B0082C3B3 /* PBXTargetDependency */,
+			);
+			name = "Serenity SquadTests";
+			productName = "Serenity SquadTests";
+			productReference = EC6AE08F2C0C8D4B0082C3B3 /* Serenity SquadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC6AE0982C0C8D4B0082C3B3 /* Serenity SquadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC6AE0A92C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity SquadUITests" */;
+			buildPhases = (
+				EC6AE0952C0C8D4B0082C3B3 /* Sources */,
+				EC6AE0962C0C8D4B0082C3B3 /* Frameworks */,
+				EC6AE0972C0C8D4B0082C3B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC6AE09B2C0C8D4B0082C3B3 /* PBXTargetDependency */,
+			);
+			name = "Serenity SquadUITests";
+			productName = "Serenity SquadUITests";
+			productReference = EC6AE0992C0C8D4B0082C3B3 /* Serenity SquadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC6AE0772C0C8D440082C3B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					EC6AE07E2C0C8D440082C3B3 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					EC6AE08E2C0C8D4B0082C3B3 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = EC6AE07E2C0C8D440082C3B3;
+					};
+					EC6AE0982C0C8D4B0082C3B3 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = EC6AE07E2C0C8D440082C3B3;
+					};
+				};
+			};
+			buildConfigurationList = EC6AE07A2C0C8D440082C3B3 /* Build configuration list for PBXProject "Serenity Squad" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC6AE0762C0C8D440082C3B3;
+			productRefGroup = EC6AE0802C0C8D440082C3B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC6AE07E2C0C8D440082C3B3 /* Serenity Squad */,
+				EC6AE08E2C0C8D4B0082C3B3 /* Serenity SquadTests */,
+				EC6AE0982C0C8D4B0082C3B3 /* Serenity SquadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC6AE07D2C0C8D440082C3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6AE08A2C0C8D4B0082C3B3 /* Preview Assets.xcassets in Resources */,
+				EC6AE0872C0C8D4B0082C3B3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE08D2C0C8D4B0082C3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE0972C0C8D4B0082C3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC6AE07B2C0C8D440082C3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
+				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE08B2C0C8D4B0082C3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6AE0942C0C8D4B0082C3B3 /* Serenity_SquadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC6AE0952C0C8D4B0082C3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC6AE0A02C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift in Sources */,
+				EC6AE09E2C0C8D4B0082C3B3 /* Serenity_SquadUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC6AE0912C0C8D4B0082C3B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6AE07E2C0C8D440082C3B3 /* Serenity Squad */;
+			targetProxy = EC6AE0902C0C8D4B0082C3B3 /* PBXContainerItemProxy */;
+		};
+		EC6AE09B2C0C8D4B0082C3B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC6AE07E2C0C8D440082C3B3 /* Serenity Squad */;
+			targetProxy = EC6AE09A2C0C8D4B0082C3B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC6AE0A12C0C8D4B0082C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC6AE0A22C0C8D4B0082C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC6AE0A42C0C8D4B0082C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Serenity Squad/Preview Content\"";
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-Squad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC6AE0A52C0C8D4B0082C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Serenity Squad/Preview Content\"";
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-Squad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC6AE0A72C0C8D4B0082C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-SquadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Serenity Squad.app/Serenity Squad";
+			};
+			name = Debug;
+		};
+		EC6AE0A82C0C8D4B0082C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-SquadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Serenity Squad.app/Serenity Squad";
+			};
+			name = Release;
+		};
+		EC6AE0AA2C0C8D4B0082C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-SquadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Serenity Squad";
+			};
+			name = Debug;
+		};
+		EC6AE0AB2C0C8D4B0082C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B64MGY93X6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jorismarhuenda.Serenity-SquadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Serenity Squad";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC6AE07A2C0C8D440082C3B3 /* Build configuration list for PBXProject "Serenity Squad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6AE0A12C0C8D4B0082C3B3 /* Debug */,
+				EC6AE0A22C0C8D4B0082C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC6AE0A32C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity Squad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6AE0A42C0C8D4B0082C3B3 /* Debug */,
+				EC6AE0A52C0C8D4B0082C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC6AE0A62C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity SquadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6AE0A72C0C8D4B0082C3B3 /* Debug */,
+				EC6AE0A82C0C8D4B0082C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC6AE0A92C0C8D4B0082C3B3 /* Build configuration list for PBXNativeTarget "Serenity SquadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6AE0AA2C0C8D4B0082C3B3 /* Debug */,
+				EC6AE0AB2C0C8D4B0082C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC6AE0772C0C8D440082C3B3 /* Project object */;
+}

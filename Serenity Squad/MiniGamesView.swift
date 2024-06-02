@@ -37,8 +37,8 @@ struct MiniGamesView: View {
             }
             .padding()
 
-            NavigationLink(destination: Text("Mini-jeu 3")) {
-                Text("Mini-jeu 3")
+            NavigationLink(destination: SudokuView()) {
+                Text("Sudoku")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()

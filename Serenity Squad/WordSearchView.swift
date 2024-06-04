@@ -41,7 +41,7 @@ struct WordSearchView: View {
                 .font(.largeTitle)
                 .padding()
 
-            Text("Trouves ces mots:")
+            Text("Find these words:")
                 .font(.headline)
             
             VStack {
@@ -59,14 +59,18 @@ struct WordSearchView: View {
             WordSearchGridStack(rows: gridSize, columns: gridSize) { row, col in
                 WordCellView(letter: self.grid[row][col])
                     .background(self.selectedLetters.contains(where: { $0.row == row && $0.col == col }) ? Color.yellow : Color.white)
-                    .onTapGesture {
-                        self.letterTapped(row: row, col: col)
-                    }
+                    .gesture(DragGesture(minimumDistance: 0)
+                        .onChanged { _ in
+                            self.letterTapped(row: row, col: col)
+                        }
+                        .onEnded { _ in
+                            self.checkSelectedWord()
+                        })
                     .border(Color.black)
             }
             .padding()
             
-            Button("Nouvelle partie") {
+            Button("New Game") {
                 self.startNewGame()
             }
             .padding()
@@ -86,6 +90,7 @@ struct WordSearchView: View {
         selectedWord = ""
         wordsToFind = Array(words.shuffled().prefix(10))
         fillGridWithWords()
+        print("New game started")
     }
     
     func fillGridWithWords() {
@@ -93,6 +98,7 @@ struct WordSearchView: View {
             placeWordInGrid(word: word)
         }
         fillEmptySpaces()
+        print("Grid filled with words")
     }
 
     func placeWordInGrid(word: String) {
@@ -108,7 +114,7 @@ struct WordSearchView: View {
                 for (index, char) in word.enumerated() {
                     let newRow = row + index * direction.0
                     let newCol = col + index * direction.1
-                    if newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || grid[newRow][newCol] != " " {
+                    if newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || (grid[newRow][newCol] != " " && grid[newRow][newCol] != char) {
                         placed = false
                         break
                     } else {
@@ -116,16 +122,17 @@ struct WordSearchView: View {
                         placed = true
                     }
                 }
+                print("Placed word \(word) at row \(row), col \(col) in direction \(direction)")
             }
         }
     }
     
     func canPlaceWord(word: String, row: Int, col: Int, direction: (Int, Int)) -> Bool {
-        for (index, _) in word.enumerated() {
+        for (index, char) in word.enumerated() {
             let newRow = row + index * direction.0
             let newCol = col + index * direction.1
             
-            if newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || grid[newRow][newCol] != " " {
+            if newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || (grid[newRow][newCol] != " " && grid[newRow][newCol] != char) {
                 return false
             }
         }
@@ -143,25 +150,27 @@ struct WordSearchView: View {
     }
     
     func letterTapped(row: Int, col: Int) {
-        if let index = selectedLetters.firstIndex(where: { $0.row == row && $0.col == col }) {
-            selectedLetters.remove(at: index)
-        } else {
+        if !selectedLetters.contains(where: { $0.row == row && $0.col == col }) {
             selectedLetters.append((row: row, col: col))
         }
         updateSelectedWord()
-        checkSelectedWord()
+        print("Tapped letter at row \(row), col \(col)")
     }
     
     func updateSelectedWord() {
         selectedWord = selectedLetters.map { String(grid[$0.row][$0.col]) }.joined()
+        print("Selected word: \(selectedWord)")
     }
 
     func checkSelectedWord() {
         if wordsToFind.contains(selectedWord) {
             foundWords.insert(selectedWord)
+            print("Found word: \(selectedWord)")
             selectedLetters.removeAll()
-            selectedWord = ""
+        } else {
+            selectedLetters.removeAll()
         }
+        selectedWord = ""
     }
 }
 
@@ -191,6 +200,7 @@ struct WordSearchGridStack<Content: View>: View {
                     ForEach(0..<columns, id: \.self) { column in
                         self.content(row, column)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Color.white)
                             .aspectRatio(1, contentMode: .fit)
                     }
                 }

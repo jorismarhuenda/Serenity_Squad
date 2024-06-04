@@ -17,19 +17,19 @@ struct MiniGamesView: View {
             
             VStack(spacing: 20) {
                 NavigationLink(destination: Game2048View()) {
-                    GameButton(title: "2048", backgroundColor: .green)
+                    GameButton(title: "2048")
                 }
 
                 NavigationLink(destination: GameFlappyView()) {
-                    GameButton(title: "Flappy", backgroundColor: .orange)
+                    GameButton(title: "Flappy")
                 }
 
                 NavigationLink(destination: SudokuView()) {
-                    GameButton(title: "Sudoku", backgroundColor: .blue)
+                    GameButton(title: "Sudoku")
                 }
 
-                NavigationLink(destination: WordSearchView()) {
-                    GameButton(title: "Word Search", backgroundColor: .purple)
+                NavigationLink(destination: CrosswordPuzzleView()) {
+                    GameButton(title: "Mots croisés")
                 }
             }
             .padding()
@@ -42,18 +42,20 @@ struct MiniGamesView: View {
 
 struct GameButton: View {
     var title: String
-    var backgroundColor: Color
 
     var body: some View {
         Text(title)
             .font(.headline)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
             .padding()
             .frame(maxWidth: .infinity)
-            .background(backgroundColor)
+            .background(Color.clear)
             .cornerRadius(10)
-            .shadow(color: .gray, radius: 5, x: 0, y: 5)
             .padding(.horizontal)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.black, lineWidth: 1)
+            )
     }
 }
 

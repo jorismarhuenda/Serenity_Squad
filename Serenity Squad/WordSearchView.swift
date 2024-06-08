@@ -10,31 +10,20 @@ import SwiftUI
 struct WordSearchView: View {
     @State private var grid: [[Character]] = Array(repeating: Array(repeating: " ", count: 10), count: 10)
     @State private var wordsToFind: [String] = []
-    @State private var selectedLetters: [(row: Int, col: Int)] = []
+    @State private var selectedLetters: [GridPosition] = []
     @State private var foundWords: Set<String> = []
     @State private var selectedWord: String = ""
+    @State private var markedLetters: Set<GridPosition> = []
     
     let words = [
         "AMOUR", "JOIE", "BONHEUR", "BEAUTE", "PAIX", "HARMONIE", "SERENITE", "PLAISIR", "RIRE", "SOURIRE",
-        "CARESSE", "TENDRESSE", "AFFECTION", "ENCHANTEMENT", "EMERVEILLEMENT", "SOUVENIR", "DOUCEUR", "CALME", "RECONFORT", "FELICITE",
-        "GRACE", "CHARME", "EMOTION", "PASSION", "AMITIE", "JUBILATION", "RAVISSEMENT", "VOLUPTE", "EXTASE", "DELECTATION",
-        "ECLOSION", "EPANOUISSEMENT", "RADIEUX", "LUMINEUX", "SOLEIL", "CAMPAGNE", "PARADIS", "PAISIBLE", "EQUILIBRE", "BIENVEILLANCE",
-        "ADMIRATION", "COMPASSION", "DELICE", "TENDRE", "SENSUALITE", "EUPHORIE", "ENVOL", "MAGIE", "INNOCENCE", "PARFAIT",
-        "EXQUISE", "ELEGANCE", "SUBLIME", "MERVEILLE", "REVE", "ROMANTIQUE", "DECOUVERTE", "FANTAISIE", "INSPIRATION", "LUMIERE",
-        "NATURE", "PROFONDEUR", "PURETE", "QUIETUDE", "REVERIE", "SYMPHONIE", "UNION", "VALSE", "VELVET", "ZENITH",
-        "ALLURE", "AMABILITE", "AQUARELLE", "ARCHE", "BIJOU", "BLEU", "BLOOM", "BRISE", "CADENCE", "CAPTIVE",
-        "CELEBRER", "CHARISME", "CLARTE", "CLOCHETTE", "CONFORT", "CONFIANCE", "COQUELICOT", "CUPIDON", "DANSE", "DELICATESSE",
-        "DOUCE", "ECLAT", "ECRIN", "EFFUSION", "ELEGANT", "EMBRUN", "EMOTIONNEL", "ENCHANTE", "ENGLOUTIR", "ENNOBLIR",
-        "EPANOUIT", "ETINCELER", "EXALTANT", "EXQUISE", "FLAMBOYANT", "FLORAL", "FRAICHEUR", "FRAGRANCE", "FUSION", "GAITE",
-        "GALANT", "GENEREUX", "GRATITUDE", "HARMONIEUX", "HEUREUX", "IDYLLE", "IMMORTEL", "INNOCENT", "INTENSITE", "IRIS",
-        "JASMIN", "JOUISSANCE", "JOVIAL", "LAVANDE", "LEGATO", "LISERON", "LOYAUTE", "LUSTRER", "MERVEILLEUX", "MOUSSELINE",
-        "MUSE", "MUSIQUE", "NAISSANCE", "NOSTALGIE", "ODEUR", "OPALE", "ORIGINE", "PAMPRE", "PAPILLON", "PASTEL",
-        "PATIENCE", "PETILLANT", "PRECIEUX", "PROMENADE", "PURE", "RAYONNANT", "REFLET", "REMEDE", "ROMANTISME", "RUBIS",
-        "SAGESSE", "SATIN", "SCINTILLER", "SEDUISANT", "SERENITE", "SIMPLICITE", "SOLEIL", "SONATE", "SPIRITUEL", "SUAVITE",
-        "SUCRE", "SYMPATHIE", "TENDREMENT", "TRANQUILLE", "VALENTIN", "VAPOREUX", "VIBRANT", "VIVACITE", "VOLUPTUEUX", "ZEN"
-    ]
+        "CARESSE", "TENDRESSE", "AFFECTION", "SOUVENIR", "DOUCEUR", "CALME", "RECONFORT", "FELICITE",
+        "GRACE", "CHARME", "EMOTION", "PASSION", "AMITIE", "JUBILATION", "VOLUPTE", "EXTASE", "DELECTATION"
+    ].filter { $0.count <= 10 } // Limitation à des mots de 10 lettres maximum
+
     let gridSize = 10
-    
+    let cellSize: CGFloat = 30.0
+
     var body: some View {
         VStack {
             Text("Word Search")
@@ -58,10 +47,15 @@ struct WordSearchView: View {
 
             WordSearchGridStack(rows: gridSize, columns: gridSize) { row, col in
                 WordCellView(letter: self.grid[row][col])
-                    .background(self.selectedLetters.contains(where: { $0.row == row && $0.col == col }) ? Color.yellow : Color.white)
+                    .background(self.markedLetters.contains(GridPosition(row: row, col: col)) ? Color.green : (self.selectedLetters.contains(GridPosition(row: row, col: col)) ? Color.yellow : Color.white))
                     .gesture(DragGesture(minimumDistance: 0)
-                        .onChanged { _ in
-                            self.letterTapped(row: row, col: col)
+                        .onChanged { value in
+                            let location = value.location
+                            let row = Int(location.y / self.cellSize)
+                            let col = Int(location.x / self.cellSize)
+                            if row >= 0 && row < self.gridSize && col >= 0 && col < self.gridSize {
+                                self.letterTapped(row: row, col: col)
+                            }
                         }
                         .onEnded { _ in
                             self.checkSelectedWord()
@@ -69,6 +63,7 @@ struct WordSearchView: View {
                     .border(Color.black)
             }
             .padding()
+            .frame(width: self.cellSize * CGFloat(gridSize), height: self.cellSize * CGFloat(gridSize))
             
             Button("New Game") {
                 self.startNewGame()
@@ -87,10 +82,10 @@ struct WordSearchView: View {
         grid = Array(repeating: Array(repeating: " ", count: gridSize), count: gridSize)
         selectedLetters.removeAll()
         foundWords.removeAll()
+        markedLetters.removeAll()
         selectedWord = ""
-        wordsToFind = Array(words.shuffled().prefix(10))
+        wordsToFind = Array(words.shuffled().prefix(5)) // Réduction du nombre de mots
         fillGridWithWords()
-        print("New game started")
     }
     
     func fillGridWithWords() {
@@ -98,7 +93,6 @@ struct WordSearchView: View {
             placeWordInGrid(word: word)
         }
         fillEmptySpaces()
-        print("Grid filled with words")
     }
 
     func placeWordInGrid(word: String) {
@@ -114,15 +108,9 @@ struct WordSearchView: View {
                 for (index, char) in word.enumerated() {
                     let newRow = row + index * direction.0
                     let newCol = col + index * direction.1
-                    if newRow < 0 || newRow >= gridSize || newCol < 0 || newCol >= gridSize || (grid[newRow][newCol] != " " && grid[newRow][newCol] != char) {
-                        placed = false
-                        break
-                    } else {
-                        grid[newRow][newCol] = char
-                        placed = true
-                    }
+                    grid[newRow][newCol] = char
                 }
-                print("Placed word \(word) at row \(row), col \(col) in direction \(direction)")
+                placed = true
             }
         }
     }
@@ -150,28 +138,30 @@ struct WordSearchView: View {
     }
     
     func letterTapped(row: Int, col: Int) {
-        if !selectedLetters.contains(where: { $0.row == row && $0.col == col }) {
-            selectedLetters.append((row: row, col: col))
+        let position = GridPosition(row: row, col: col)
+        if !selectedLetters.contains(position) {
+            selectedLetters.append(position)
         }
         updateSelectedWord()
-        print("Tapped letter at row \(row), col \(col)")
     }
     
     func updateSelectedWord() {
         selectedWord = selectedLetters.map { String(grid[$0.row][$0.col]) }.joined()
-        print("Selected word: \(selectedWord)")
     }
 
     func checkSelectedWord() {
         if wordsToFind.contains(selectedWord) {
             foundWords.insert(selectedWord)
-            print("Found word: \(selectedWord)")
-            selectedLetters.removeAll()
-        } else {
-            selectedLetters.removeAll()
+            markedLetters.formUnion(selectedLetters)
         }
+        selectedLetters.removeAll()
         selectedWord = ""
     }
+}
+
+struct GridPosition: Hashable {
+    let row: Int
+    let col: Int
 }
 
 struct WordCellView: View {
@@ -200,7 +190,6 @@ struct WordSearchGridStack<Content: View>: View {
                     ForEach(0..<columns, id: \.self) { column in
                         self.content(row, column)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color.white)
                             .aspectRatio(1, contentMode: .fit)
                     }
                 }

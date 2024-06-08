@@ -32,6 +32,7 @@
 		ECE6FC8A2C14802E001BD8A7 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC892C14802E001BD8A7 /* ThemeManager.swift */; };
 		ECE6FC8C2C148060001BD8A7 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */; };
 		ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */; };
+		ECE6FC902C14914A001BD8A7 /* HangmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		ECE6FC892C14802E001BD8A7 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEditor.swift; sourceTree = "<group>"; };
+		ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */,
 				ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */,
 				ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */,
+				ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -328,6 +331,7 @@
 				ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */,
 				ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */,
 				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
+				ECE6FC902C14914A001BD8A7 /* HangmanView.swift in Sources */,
 				ECE6FC7C2C147ABA001BD8A7 /* AspectVGrid.swift in Sources */,
 				EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */,
 				ECE6FC8C2C148060001BD8A7 /* ThemeStore.swift in Sources */,

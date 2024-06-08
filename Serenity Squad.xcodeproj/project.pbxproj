@@ -33,6 +33,7 @@
 		ECE6FC8C2C148060001BD8A7 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */; };
 		ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */; };
 		ECE6FC902C14914A001BD8A7 /* HangmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */; };
+		ECE6FC922C14AC8F001BD8A7 /* BaccalaureatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEditor.swift; sourceTree = "<group>"; };
 		ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanView.swift; sourceTree = "<group>"; };
+		ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaccalaureatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */,
 				ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */,
 				ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */,
+				ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -340,6 +343,7 @@
 				EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */,
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
 				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
+				ECE6FC922C14AC8F001BD8A7 /* BaccalaureatView.swift in Sources */,
 				ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */,
 				EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */,
 				ECE6FC772C0F839E001BD8A7 /* CrosswordPuzzleView.swift in Sources */,

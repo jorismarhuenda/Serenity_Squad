@@ -14,6 +14,8 @@ struct WordSearchView: View {
     @State private var foundWords: Set<String> = []
     @State private var selectedWord: String = ""
     @State private var markedLetters: Set<GridPosition> = []
+    @State private var showInstructions: Bool = false
+    @State private var showCongratulations: Bool = false
     
     let words = [
         "AMOUR", "JOIE", "BONHEUR", "BEAUTE", "PAIX", "HARMONIE", "SERENITE", "PLAISIR", "RIRE", "SOURIRE",
@@ -26,6 +28,21 @@ struct WordSearchView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.showInstructions.toggle()
+                }) {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                }
+                .alert(isPresented: $showInstructions) {
+                    Alert(title: Text("Instructions"), message: Text("Cliquez sur chaque lettre du mot trouvé pour le sélectionner."), dismissButton: .default(Text("OK")))
+                }
+            }
+            
             Text("Word Search")
                 .font(.largeTitle)
                 .padding()
@@ -48,18 +65,9 @@ struct WordSearchView: View {
             WordSearchGridStack(rows: gridSize, columns: gridSize) { row, col in
                 WordCellView(letter: self.grid[row][col])
                     .background(self.markedLetters.contains(GridPosition(row: row, col: col)) ? Color.green : (self.selectedLetters.contains(GridPosition(row: row, col: col)) ? Color.yellow : Color.white))
-                    .gesture(DragGesture(minimumDistance: 0)
-                        .onChanged { value in
-                            let location = value.location
-                            let row = Int(location.y / self.cellSize)
-                            let col = Int(location.x / self.cellSize)
-                            if row >= 0 && row < self.gridSize && col >= 0 && col < self.gridSize {
-                                self.letterTapped(row: row, col: col)
-                            }
-                        }
-                        .onEnded { _ in
-                            self.checkSelectedWord()
-                        })
+                    .onTapGesture {
+                        self.letterTapped(row: row, col: col)
+                    }
                     .border(Color.black)
             }
             .padding()
@@ -75,6 +83,11 @@ struct WordSearchView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             self.startNewGame()
+        }
+        .alert(isPresented: $showCongratulations) {
+            Alert(title: Text("Félicitations!"), message: Text("Vous avez trouvé tous les mots!"), dismissButton: .default(Text("Nouvelle Partie")) {
+                self.startNewGame()
+            })
         }
     }
 
@@ -147,12 +160,32 @@ struct WordSearchView: View {
     
     func updateSelectedWord() {
         selectedWord = selectedLetters.map { String(grid[$0.row][$0.col]) }.joined()
+        if wordsToFind.contains(selectedWord) {
+            foundWords.insert(selectedWord)
+            markedLetters.formUnion(selectedLetters)
+            selectedLetters.removeAll() // Clear selection after finding the word
+            
+            // Check if all words have been found
+            if foundWords.count == wordsToFind.count {
+                showCongratulations = true
+            }
+        } else {
+            // Check if the selected word is a prefix of any words to find
+            let isPrefix = wordsToFind.contains { $0.hasPrefix(selectedWord) }
+            if !isPrefix {
+                selectedLetters.removeAll() // Clear selection if not a valid prefix
+            }
+        }
     }
 
     func checkSelectedWord() {
         if wordsToFind.contains(selectedWord) {
             foundWords.insert(selectedWord)
             markedLetters.formUnion(selectedLetters)
+            // Check if all words have been found
+            if foundWords.count == wordsToFind.count {
+                showCongratulations = true
+            }
         }
         selectedLetters.removeAll()
         selectedWord = ""

@@ -53,6 +53,10 @@ struct MiniGamesView: View {
                     NavigationLink(destination: WordSearchView()) {
                         GameButton(title: "Mots croisés", imageName: "wordsearch")
                     }
+                    
+                    NavigationLink(destination: BaccalaureatView()) {
+                        GameButton(title: "Mini Bac", imageName: "baccalaureat")
+                    }
                 }
                 .padding()
             }

@@ -31,6 +31,9 @@ struct MiniGamesView: View {
                 NavigationLink(destination: CrosswordPuzzleView()) {
                     GameButton(title: "Mots croisés")
                 }
+                NavigationLink(destination: ThemeManager()) {
+                    GameButton(title: "Jeu de mémoire")
+                }
             }
             .padding()
         }

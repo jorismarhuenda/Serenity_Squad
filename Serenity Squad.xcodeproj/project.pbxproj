@@ -22,7 +22,16 @@
 		EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */; };
 		ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */; };
 		ECE6FC772C0F839E001BD8A7 /* CrosswordPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */; };
-		ECE6FC792C14783C001BD8A7 /* MemoryMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC782C14783C001BD8A7 /* MemoryMatchView.swift */; };
+		ECE6FC7C2C147ABA001BD8A7 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC7B2C147ABA001BD8A7 /* AspectVGrid.swift */; };
+		ECE6FC7E2C147AD4001BD8A7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC7D2C147AD4001BD8A7 /* Cardify.swift */; };
+		ECE6FC802C147B13001BD8A7 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC7F2C147B13001BD8A7 /* EmojiMemoryGame.swift */; };
+		ECE6FC822C147B3C001BD8A7 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC812C147B3C001BD8A7 /* EmojiMemoryGameView.swift */; };
+		ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC832C147FCD001BD8A7 /* MemoryGame.swift */; };
+		ECE6FC862C147FED001BD8A7 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC852C147FED001BD8A7 /* Pie.swift */; };
+		ECE6FC882C14800D001BD8A7 /* RGBAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC872C14800C001BD8A7 /* RGBAColor.swift */; };
+		ECE6FC8A2C14802E001BD8A7 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC892C14802E001BD8A7 /* ThemeManager.swift */; };
+		ECE6FC8C2C148060001BD8A7 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */; };
+		ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +70,16 @@
 		EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
 		ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearchView.swift; sourceTree = "<group>"; };
 		ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordPuzzleView.swift; sourceTree = "<group>"; };
-		ECE6FC782C14783C001BD8A7 /* MemoryMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryMatchView.swift; sourceTree = "<group>"; };
+		ECE6FC7B2C147ABA001BD8A7 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		ECE6FC7D2C147AD4001BD8A7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		ECE6FC7F2C147B13001BD8A7 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		ECE6FC812C147B3C001BD8A7 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
+		ECE6FC832C147FCD001BD8A7 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		ECE6FC852C147FED001BD8A7 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		ECE6FC872C14800C001BD8A7 /* RGBAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBAColor.swift; sourceTree = "<group>"; };
+		ECE6FC892C14802E001BD8A7 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
+		ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +130,7 @@
 		EC6AE0812C0C8D440082C3B3 /* Serenity Squad */ = {
 			isa = PBXGroup;
 			children = (
+				ECE6FC7A2C147A8B001BD8A7 /* MemoryGame */,
 				EC6AE0822C0C8D440082C3B3 /* Serenity_SquadApp.swift */,
 				EC6AE0AC2C0C8DFD0082C3B3 /* QuestionnaireView.swift */,
 				EC6AE0AE2C0C8E5B0082C3B3 /* Color.swift */,
@@ -121,7 +140,6 @@
 				EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */,
 				ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */,
 				ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */,
-				ECE6FC782C14783C001BD8A7 /* MemoryMatchView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -152,6 +170,23 @@
 				EC6AE09F2C0C8D4B0082C3B3 /* Serenity_SquadUITestsLaunchTests.swift */,
 			);
 			path = "Serenity SquadUITests";
+			sourceTree = "<group>";
+		};
+		ECE6FC7A2C147A8B001BD8A7 /* MemoryGame */ = {
+			isa = PBXGroup;
+			children = (
+				ECE6FC7B2C147ABA001BD8A7 /* AspectVGrid.swift */,
+				ECE6FC7D2C147AD4001BD8A7 /* Cardify.swift */,
+				ECE6FC7F2C147B13001BD8A7 /* EmojiMemoryGame.swift */,
+				ECE6FC812C147B3C001BD8A7 /* EmojiMemoryGameView.swift */,
+				ECE6FC832C147FCD001BD8A7 /* MemoryGame.swift */,
+				ECE6FC852C147FED001BD8A7 /* Pie.swift */,
+				ECE6FC872C14800C001BD8A7 /* RGBAColor.swift */,
+				ECE6FC892C14802E001BD8A7 /* ThemeManager.swift */,
+				ECE6FC8B2C148060001BD8A7 /* ThemeStore.swift */,
+				ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */,
+			);
+			path = MemoryGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,13 +321,22 @@
 			files = (
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
 				EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */,
+				ECE6FC882C14800D001BD8A7 /* RGBAColor.swift in Sources */,
+				ECE6FC862C147FED001BD8A7 /* Pie.swift in Sources */,
+				ECE6FC822C147B3C001BD8A7 /* EmojiMemoryGameView.swift in Sources */,
+				ECE6FC8A2C14802E001BD8A7 /* ThemeManager.swift in Sources */,
+				ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */,
 				ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */,
 				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
+				ECE6FC7C2C147ABA001BD8A7 /* AspectVGrid.swift in Sources */,
 				EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */,
+				ECE6FC8C2C148060001BD8A7 /* ThemeStore.swift in Sources */,
+				ECE6FC802C147B13001BD8A7 /* EmojiMemoryGame.swift in Sources */,
+				ECE6FC7E2C147AD4001BD8A7 /* Cardify.swift in Sources */,
 				EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */,
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
 				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
-				ECE6FC792C14783C001BD8A7 /* MemoryMatchView.swift in Sources */,
+				ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */,
 				EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */,
 				ECE6FC772C0F839E001BD8A7 /* CrosswordPuzzleView.swift in Sources */,
 			);

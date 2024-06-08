@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Serenity_SquadApp: App {
+    @StateObject private var themeStore = ThemeStore(named: "default")
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(themeStore)
         }
     }
 }

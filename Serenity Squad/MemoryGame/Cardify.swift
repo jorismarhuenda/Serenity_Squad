@@ -33,8 +33,12 @@ struct Cardify: AnimatableModifier {
         }
         .rotation3DEffect(
             Angle.degrees(rotation),
-            axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/
+            axis: (x: 0.0, y: 1.0, z: 0.0)
         )
+        .background(
+            LinearGradient(gradient: Gradient(colors: [.pastelPink, .pastelBlue]), startPoint: .top, endPoint: .bottom)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)) // Ensure the background gradient follows the card shape
     }
     
     private struct DrawingConstants {

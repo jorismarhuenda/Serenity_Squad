@@ -11,41 +11,47 @@ struct ThemeManager: View {
     @EnvironmentObject var themeStore: ThemeStore
         
     @State private var editMode: EditMode = .active
-    
     @State private var themeToEdit: Theme?
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(themeStore.themes) { theme in
-                    themeDescription(of: theme)
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.all)
+                
+                List {
+                    ForEach(themeStore.themes) { theme in
+                        themeDescription(of: theme)
+                    }
+                    .onDelete { indexSet in
+                        themeStore.themes.remove(atOffsets: indexSet)
+                    }
+                    .onMove { indices, newOffset in
+                        themeStore.themes.move(fromOffsets: indices, toOffset: newOffset)
+                    }
                 }
-                .onDelete{ indexSet in
-                    themeStore.themes.remove(atOffsets: indexSet)
+                .navigationTitle("Memorize")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem { EditButton() }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        addTheme
+                    }
                 }
-                .onMove { indices, newOffset in
-                    themeStore.themes.move(fromOffsets: indices, toOffset: newOffset)
-                }
+                .popover(item: $themeToEdit, content: { theme in
+                    ThemeEditor(theme: $themeStore.themes[themeStore.themes.firstIndex(where: { $0.id == theme.id })!])
+                })
+                .environment(\.editMode, $editMode)
             }
-            .navigationTitle("Memorize")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem { EditButton() }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    addTheme
-                }
-            }
-            .popover(item: $themeToEdit, content: { theme in
-                ThemeEditor(theme: $themeStore.themes[themeStore.themes.firstIndex(where: { $0.id == theme.id })!])
-            })
-            .environment(\.editMode, $editMode)
         }
     }
     
     func themeDescription(of theme: Theme) -> some View {
-        NavigationLink ( destination: EmojiMemoryGameView(game: EmojiMemoryGame(themed: theme))) {
+        NavigationLink(destination: EmojiMemoryGameView(game: EmojiMemoryGame(themed: theme))) {
             VStack(alignment: .leading) {
-                Text(theme.name.capitalized).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(Color(rgbaColor: theme.color))
+                Text(theme.name.capitalized)
+                    .font(.title)
+                    .foregroundColor(Color(rgbaColor: theme.color))
                 Text(theme.items.joined())
             }
             .gesture(editMode == .active ? editTap(of: theme) : nil)
@@ -62,7 +68,7 @@ struct ThemeManager: View {
     }
     
     func editTap(of theme: Theme) -> some Gesture {
-        TapGesture (count: 1)
+        TapGesture(count: 1)
             .onEnded {
                 themeToEdit = theme
             }

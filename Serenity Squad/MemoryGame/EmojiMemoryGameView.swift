@@ -9,15 +9,19 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     @ObservedObject var game: EmojiMemoryGame
-    
+
     var body: some View {
-        ZStack(alignment: .bottom) {
-            gameBody
-            .padding(.horizontal)
-            deckBody.padding()
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            ZStack(alignment: .bottom) {
+                gameBody
+                    .padding(.horizontal)
+                deckBody.padding()
+            }
         }
     }
-    
+
     @State private var dealt = Set<Int>()
     
     @Namespace private var dealingNamespace
@@ -59,10 +63,8 @@ struct EmojiMemoryGameView: View {
                             withAnimation {
                                 game.choose(card)
                             }
-                            
                         }
                 }
-                
             })
             .foregroundColor(Color(rgbaColor: game.theme.color))
             HStack {
@@ -89,7 +91,7 @@ struct EmojiMemoryGameView: View {
                     .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
             }
         }
-        .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight, alignment: .center)
         .foregroundColor(Color(rgbaColor: game.theme.color))
         .onTapGesture {
             for card in game.cards {
@@ -97,7 +99,6 @@ struct EmojiMemoryGameView: View {
                     deal(card)
                 }
             }
-            
         }
     }
     
@@ -115,6 +116,7 @@ struct CardView: View {
     let card: MemoryGame<String>.Card
     
     @State private var animatedBonusRemaining: Double = 0
+    
     var body: some View {
         GeometryReader(content: { geometry in
             ZStack {

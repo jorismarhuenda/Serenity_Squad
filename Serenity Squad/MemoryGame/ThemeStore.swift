@@ -58,7 +58,7 @@ class ThemeStore: ObservableObject{
         self.name = name
         restoreFromUserDefaults()
         if themes.isEmpty {
-            addTheme(named: "cars", withItems: ["🚙", "🚜", "✈️", "🚀", "🚗", "🚠", "🚂", "🛶", "🚒", "🛳", "🏍", "🛴", "🛵", "🚔", "🛺"], withPlayablePairs: 6, colored: .blue)
+            addTheme(named: "Transports", withItems: ["🚙", "🚜", "✈️", "🚀", "🚗", "🚠", "🚂", "🛶", "🚒", "🛳", "🏍", "🛴", "🛵", "🚔", "🛺"], withPlayablePairs: 6, colored: .blue)
             addTheme(named: "Nourriture", withItems: ["🍏", "🥐", "🌭", "🍞", "🥗", "🥘", "🍆", "🍔", "🍙", "🍰", "🧃"], withPlayablePairs: 6, colored: .green)
             addTheme(named: "Drapeaux", withItems: ["🏴‍☠️", "🇬🇧" ,"🇳🇴", "🇷🇺", "🇲🇰", "🇼🇸", "🇺🇸" ,"🇵🇭", "🇨🇿", "🇫🇷", "🇯🇵"], withPlayablePairs: 6, colored: .red)
             addTheme(named: "Animaux", withItems: ["🐶", "🦊", "🐻", "🐵", "🐨", "🦁", "🐯", "🐷", "🐸", "🐤", "🐗"], withPlayablePairs: 6, colored: .orange)

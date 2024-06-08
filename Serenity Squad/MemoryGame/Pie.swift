@@ -13,12 +13,13 @@ struct Pie: Shape {
     var clockwise = false
     
     var animatableData: AnimatablePair<Double, Double> {
-        get { AnimatablePair(startAngle.radians, endAngle.radians)}
+        get { AnimatablePair(startAngle.radians, endAngle.radians) }
         set {
             startAngle = Angle.radians(newValue.first)
             endAngle = Angle.radians(newValue.second)
         }
     }
+
     func path(in rect: CGRect) -> Path {
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
@@ -33,6 +34,22 @@ struct Pie: Shape {
         p.addLine(to: center)
         return p
     }
-    
-    
+}
+
+struct PieView: View {
+    var body: some View {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            Pie(startAngle: .degrees(0), endAngle: .degrees(110))
+                .fill(Color.orange)
+                .padding()
+        }
+    }
+}
+
+struct PieView_Previews: PreviewProvider {
+    static var previews: some View {
+        PieView()
+    }
 }

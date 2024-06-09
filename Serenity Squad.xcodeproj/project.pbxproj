@@ -34,6 +34,9 @@
 		ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */; };
 		ECE6FC902C14914A001BD8A7 /* HangmanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */; };
 		ECE6FC922C14AC8F001BD8A7 /* BaccalaureatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */; };
+		ECE6FC942C15B258001BD8A7 /* MathQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC932C15B258001BD8A7 /* MathQuizView.swift */; };
+		ECE6FC962C15B444001BD8A7 /* WordScrambleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */; };
+		ECE6FC982C15B831001BD8A7 /* Whack-a-Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		ECE6FC8D2C14808E001BD8A7 /* ThemeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEditor.swift; sourceTree = "<group>"; };
 		ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanView.swift; sourceTree = "<group>"; };
 		ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaccalaureatView.swift; sourceTree = "<group>"; };
+		ECE6FC932C15B258001BD8A7 /* MathQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuizView.swift; sourceTree = "<group>"; };
+		ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleView.swift; sourceTree = "<group>"; };
+		ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Whack-a-Mole.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,9 @@
 				ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */,
 				ECE6FC8F2C14914A001BD8A7 /* HangmanView.swift */,
 				ECE6FC912C14AC8F001BD8A7 /* BaccalaureatView.swift */,
+				ECE6FC932C15B258001BD8A7 /* MathQuizView.swift */,
+				ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */,
+				ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -333,6 +342,7 @@
 				ECE6FC8A2C14802E001BD8A7 /* ThemeManager.swift in Sources */,
 				ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */,
 				ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */,
+				ECE6FC982C15B831001BD8A7 /* Whack-a-Mole.swift in Sources */,
 				EC6AE0AF2C0C8E5B0082C3B3 /* Color.swift in Sources */,
 				ECE6FC902C14914A001BD8A7 /* HangmanView.swift in Sources */,
 				ECE6FC7C2C147ABA001BD8A7 /* AspectVGrid.swift in Sources */,
@@ -342,6 +352,8 @@
 				ECE6FC7E2C147AD4001BD8A7 /* Cardify.swift in Sources */,
 				EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */,
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
+				ECE6FC962C15B444001BD8A7 /* WordScrambleView.swift in Sources */,
+				ECE6FC942C15B258001BD8A7 /* MathQuizView.swift in Sources */,
 				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
 				ECE6FC922C14AC8F001BD8A7 /* BaccalaureatView.swift in Sources */,
 				ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */,

@@ -7,10 +7,73 @@
 
 import SwiftUI
 
+enum MiniGame: String {
+    case game2048, flappy, sudoku, crossword, memory, hangman, wordsearch, baccalaureat, mathquiz, wordscramble, whackamole, pierrepapier
+
+    var title: String {
+        switch self {
+        case .game2048: return "2048"
+        case .flappy: return "Flappy"
+        case .sudoku: return "Sudoku"
+        case .crossword: return "Mots fléchés"
+        case .memory: return "Jeu de mémoire"
+        case .hangman: return "Jeu du pendu"
+        case .wordsearch: return "Mots croisés"
+        case .baccalaureat: return "Mini Bac"
+        case .mathquiz: return "Maths en folie"
+        case .wordscramble: return "Mots en folie"
+        case .whackamole: return "Taupe en vue!"
+        case .pierrepapier: return "Pierre, papier, ciseaux!"
+        }
+    }
+
+    var imageName: String {
+            switch self {
+            case .game2048: return "2048"
+            case .flappy: return "flappy"
+            case .sudoku: return "sudoku"
+            case .crossword: return "crossword"
+            case .memory: return "memory"
+            case .hangman: return "hangman"
+            case .wordsearch: return "wordsearch"
+            case .baccalaureat: return "baccalaureat"
+            case .mathquiz: return "mathquiz"
+            case .wordscramble: return "wordscramble"
+            case .whackamole: return "whack"
+            case .pierrepapier: return "pierrepapier"
+            }
+        }
+
+    @ViewBuilder
+    var view: some View {
+        switch self {
+        case .game2048: Game2048View()
+        case .flappy: GameFlappyView()
+        case .sudoku: SudokuView()
+        case .crossword: CrosswordPuzzleView()
+        case .memory: ThemeManager()
+        case .hangman: HangmanView()
+        case .wordsearch: WordSearchView()
+        case .baccalaureat: BaccalaureatView()
+        case .mathquiz: MathQuizView()
+        case .wordscramble: WordScrambleView()
+        case .whackamole: WhackAMoleView()
+        case .pierrepapier: RockPaperScissorsView()
+        }
+    }
+}
+
 struct MiniGamesView: View {
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
+    ]
+
+    @State private var currentPage = 0
+
+    let games: [MiniGame] = [
+        .game2048, .flappy, .sudoku, .crossword, .memory,
+        .hangman, .wordsearch, .baccalaureat, .mathquiz, .wordscramble, .whackamole, .pierrepapier
     ]
 
     var body: some View {
@@ -26,54 +89,69 @@ struct MiniGamesView: View {
 
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    NavigationLink(destination: Game2048View()) {
-                        GameButton(title: "2048", imageName: "2048")
-                    }
-
-                    NavigationLink(destination: GameFlappyView()) {
-                        GameButton(title: "Flappy", imageName: "flappy")
-                    }
-
-                    NavigationLink(destination: SudokuView()) {
-                        GameButton(title: "Sudoku", imageName: "sudoku")
-                    }
-
-                    NavigationLink(destination: CrosswordPuzzleView()) {
-                        GameButton(title: "Mots fléchés", imageName: "crossword")
-                    }
-
-                    NavigationLink(destination: ThemeManager()) {
-                        GameButton(title: "Jeu de mémoire", imageName: "memory")
-                    }
-                    
-                    NavigationLink(destination: HangmanView()) {
-                        GameButton(title: "Jeu du pendu", imageName: "hangman")
-                    }
-                    
-                    NavigationLink(destination: WordSearchView()) {
-                        GameButton(title: "Mots croisés", imageName: "wordsearch")
-                    }
-                    
-                    NavigationLink(destination: BaccalaureatView()) {
-                        GameButton(title: "Mini Bac", imageName: "baccalaureat")
-                    }
-                    
-                    NavigationLink(destination: MathQuizView()) {
-                        GameButton(title: "Maths en folie", imageName: "mathquiz")
-                    }
-                    
-                    NavigationLink(destination: WordScrambleView()) {
-                        GameButton(title: "Mots en folie", imageName: "wordscramble")
+                    ForEach(currentPageGames, id: \.self) { game in
+                        NavigationLink(destination: game.view) {
+                            GameButton(title: game.title, imageName: game.imageName)
+                        }
                     }
                 }
                 .padding()
             }
 
             Spacer() // Ajout d'un espace en bas pour permettre le défilement
+
+            HStack {
+                if currentPage > 0 {
+                    Button(action: {
+                        currentPage -= 1
+                    }) {
+                        Text("Précédent")
+                            .padding()
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.pastelPink.opacity(0.7), Color.pastelBlue.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                            )
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.black, lineWidth: 1)
+                            )
+                    }
+                }
+                Spacer()
+                if currentPage < totalPages - 1 {
+                    Button(action: {
+                        currentPage += 1
+                    }) {
+                        Text("Suivant")
+                            .padding()
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color.pastelPink.opacity(0.7), Color.pastelBlue.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
+                            )
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.black, lineWidth: 1)
+                            )
+                    }
+                }
+            }
+            .padding(.horizontal)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
+    }
+
+    var currentPageGames: ArraySlice<MiniGame> {
+        let start = currentPage * 10
+        let end = min(start + 10, games.count)
+        return games[start..<end]
+    }
+
+    var totalPages: Int {
+        (games.count + 9) / 10
     }
 }
 

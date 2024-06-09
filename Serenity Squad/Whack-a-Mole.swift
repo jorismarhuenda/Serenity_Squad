@@ -13,6 +13,7 @@ struct WhackAMoleView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var timer: Timer?
+    @State private var timeInterval: Double = 1.0
 
     let gridSize = 3
 
@@ -76,21 +77,39 @@ struct WhackAMoleView: View {
 
     func startGame() {
         score = 0
+        timeInterval = 1.0
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            self.molePosition = Int.random(in: 0..<9)
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
+            self.changeMolePosition()
+        }
+    }
+
+    func changeMolePosition() {
+        var newPosition: Int
+        repeat {
+            newPosition = Int.random(in: 0..<9)
+        } while newPosition == molePosition
+        
+        molePosition = newPosition
+        
+        // Increase game speed as the score increases
+        if score > 0 && score % 5 == 0 {
+            timeInterval = max(0.2, timeInterval - 0.1) // Decrease interval, but not below 0.2 seconds
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
+                self.changeMolePosition()
+            }
         }
     }
 
     func whack(index: Int) {
         if index == molePosition {
             score += 1
-            alertMessage = "Bien joué !"
         } else {
             score -= 1
             alertMessage = "Raté !"
+            showAlert = true
         }
-        showAlert = true
     }
 }
 

@@ -38,6 +38,7 @@
 		ECE6FC962C15B444001BD8A7 /* WordScrambleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */; };
 		ECE6FC982C15B831001BD8A7 /* Whack-a-Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */; };
 		ECE6FC9C2C15E6D0001BD8A7 /* RockPaperScissorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */; };
+		ECE6FC9E2C185F41001BD8A7 /* BattleshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleView.swift; sourceTree = "<group>"; };
 		ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Whack-a-Mole.swift"; sourceTree = "<group>"; };
 		ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsView.swift; sourceTree = "<group>"; };
+		ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleshipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				ECE6FC952C15B444001BD8A7 /* WordScrambleView.swift */,
 				ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */,
 				ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */,
+				ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -363,6 +366,7 @@
 				ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */,
 				EC6AE0AD2C0C8DFD0082C3B3 /* QuestionnaireView.swift in Sources */,
 				ECE6FC772C0F839E001BD8A7 /* CrosswordPuzzleView.swift in Sources */,
+				ECE6FC9E2C185F41001BD8A7 /* BattleshipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,6 +39,7 @@
 		ECE6FC982C15B831001BD8A7 /* Whack-a-Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */; };
 		ECE6FC9C2C15E6D0001BD8A7 /* RockPaperScissorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */; };
 		ECE6FC9E2C185F41001BD8A7 /* BattleshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */; };
+		ECE6FCA02C18A2AE001BD8A7 /* TicTacToeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Whack-a-Mole.swift"; sourceTree = "<group>"; };
 		ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsView.swift; sourceTree = "<group>"; };
 		ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleshipView.swift; sourceTree = "<group>"; };
+		ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				ECE6FC972C15B831001BD8A7 /* Whack-a-Mole.swift */,
 				ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */,
 				ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */,
+				ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -361,6 +364,7 @@
 				EC6AE0832C0C8D440082C3B3 /* Serenity_SquadApp.swift in Sources */,
 				ECE6FC962C15B444001BD8A7 /* WordScrambleView.swift in Sources */,
 				ECE6FC942C15B258001BD8A7 /* MathQuizView.swift in Sources */,
+				ECE6FCA02C18A2AE001BD8A7 /* TicTacToeView.swift in Sources */,
 				EC6AE0B12C0C946C0082C3B3 /* MiniGamesView.swift in Sources */,
 				ECE6FC922C14AC8F001BD8A7 /* BaccalaureatView.swift in Sources */,
 				ECE6FC842C147FCD001BD8A7 /* MemoryGame.swift in Sources */,

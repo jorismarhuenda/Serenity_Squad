@@ -40,6 +40,8 @@
 		ECE6FC9C2C15E6D0001BD8A7 /* RockPaperScissorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */; };
 		ECE6FC9E2C185F41001BD8A7 /* BattleshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */; };
 		ECE6FCA02C18A2AE001BD8A7 /* TicTacToeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */; };
+		ECE6FCA22C1A09DD001BD8A7 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FCA12C1A09DC001BD8A7 /* WritingView.swift */; };
+		ECE6FCA42C1A0FC3001BD8A7 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FCA32C1A0FC3001BD8A7 /* MainMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsView.swift; sourceTree = "<group>"; };
 		ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleshipView.swift; sourceTree = "<group>"; };
 		ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeView.swift; sourceTree = "<group>"; };
+		ECE6FCA12C1A09DC001BD8A7 /* WritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
+		ECE6FCA32C1A0FC3001BD8A7 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */,
 				ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */,
 				ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */,
+				ECE6FCA12C1A09DC001BD8A7 /* WritingView.swift */,
+				ECE6FCA32C1A0FC3001BD8A7 /* MainMenuView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
 				EC6AE0862C0C8D4B0082C3B3 /* Assets.xcassets */,
 				EC6AE0882C0C8D4B0082C3B3 /* Preview Content */,
@@ -343,12 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE6FCA42C1A0FC3001BD8A7 /* MainMenuView.swift in Sources */,
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
 				EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */,
 				ECE6FC882C14800D001BD8A7 /* RGBAColor.swift in Sources */,
 				ECE6FC862C147FED001BD8A7 /* Pie.swift in Sources */,
 				ECE6FC822C147B3C001BD8A7 /* EmojiMemoryGameView.swift in Sources */,
 				ECE6FC8A2C14802E001BD8A7 /* ThemeManager.swift in Sources */,
+				ECE6FCA22C1A09DD001BD8A7 /* WritingView.swift in Sources */,
 				ECE6FC8E2C14808E001BD8A7 /* ThemeEditor.swift in Sources */,
 				ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */,
 				ECE6FC982C15B831001BD8A7 /* Whack-a-Mole.swift in Sources */,

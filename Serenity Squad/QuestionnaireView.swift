@@ -94,7 +94,7 @@ struct QuestionnaireView: View {
         }
         .disabled(questionnaireCompleted)
         .overlay(
-            questionnaireCompleted ? NavigationLink(destination: MiniGamesView()) {
+            questionnaireCompleted ? NavigationLink(destination: MainMenuView()) {
                 Text("Terminer le questionnaire")
                     .font(.headline)
                     .foregroundColor(.white)

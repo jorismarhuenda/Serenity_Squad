@@ -89,8 +89,8 @@ struct ContentView: View {
                     }
                     .padding()
                 } else {
-                    NavigationLink(destination: MiniGamesView()) {
-                        Text("Accéder aux mini-jeux")
+                    NavigationLink(destination: MainMenuView()) {
+                        Text("Bienvenue et bon amusement! <3")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()

@@ -36,6 +36,7 @@ struct MainMenuView: View {
             .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Ajoute cette ligne pour éviter les superpositions de NavigationView
     }
 }
 

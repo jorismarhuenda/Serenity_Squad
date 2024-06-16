@@ -8,176 +8,172 @@
 import SwiftUI
 
 struct WritingView: View {
-    @State private var selectedCategory = "Famille"
-    @State private var selectedTheme: String?
-    @State private var text = ""
-    @State private var savedTexts: [String: String] = [:]
-    @State private var showAllTexts = false
+    @State private var selectedCategory: String?
+    @State private var selectedTopic: String?
+    @State private var writingText: String = ""
+    @State private var savedEntries: [String: String] = UserDefaults.standard.dictionary(forKey: "savedEntries") as? [String: String] ?? [:]
+    @State private var showSavedEntries: Bool = false
 
     let categories = ["Famille", "Amour", "Travail", "Santé", "Loisirs"]
-    let themes = [
-        "Famille": ["Parents", "Enfants", "Frères", "Sœurs", "Grand-parents", "Maison", "Souvenirs", "Vacances", "Repas de famille", "Mariage", "Oncle", "Tante", "Cousin", "Cousine", "Neveu", "Nièce", "Belle-famille", "Naissance", "Héritage", "Adoption", "Famille recomposée", "Famille nombreuse", "Monoparentalité", "Famille élargie", "Famille nucléaire", "Relations familiales", "Arbre généalogique", "Histoire de famille", "Traditions familiales", "Réunions de famille", "Conflits familiaux", "Rituels familiaux", "Valeurs familiales", "Support familial", "Environnement familial", "Changement familial", "Départ de la maison", "Mariages dans la famille", "Divorce dans la famille", "Décès dans la famille", "Naissances dans la famille", "Fêtes de famille", "Éducation des enfants", "Transmission de valeurs", "Vivre ensemble", "Histoires d'enfance", "Photos de famille", "Films de famille"],
-        "Amour": ["Couple", "Romance", "Premier rendez-vous", "Cœur brisé", "Mariage", "Complicité", "Relations à distance", "Fiançailles", "Séparation", "Affection", "Baisers", "Amour de jeunesse", "Amour platonique", "Amour secret", "Déclaration d'amour", "Lettre d'amour", "Poèmes d'amour", "Chansons d'amour", "Amour interdit", "Amour éternel", "Amour perdu", "Amour passionnel", "Amitié amoureuse", "Amour non partagé", "Premier amour", "Relations amoureuses", "Histoires d'amour", "Amour maternel", "Amour paternel", "Amour fraternel", "Amour propre", "Amour-propre", "Amour-propre blessé", "Amour universel", "Amour inconditionnel", "Étreintes", "Câlins", "Séduire", "Charme", "Séduction", "Jalousie", "Amour-propre blessé", "Amour-propre exagéré", "Passion amoureuse", "Relations intimes", "Compromis amoureux", "Engagement amoureux", "Dévotion", "Amour-propre sain"],
-        "Travail": ["Carrière", "Promotion", "Collègues", "Projets", "Télétravail", "Réunions", "Stress", "Équilibre vie-travail", "Démission", "Nouveaux défis", "Évolution professionnelle", "Formations", "Développement personnel", "Productivité", "Leadership", "Entrepreneuriat", "Innovation", "Créativité", "Gestion du temps", "Motivation", "Reconnaissance", "Évaluation", "Objectifs", "Résultats", "Compétences", "Networking", "Mentorat", "Bureau", "Culture d'entreprise", "Ambiance de travail", "Compétition", "Collaboration", "Communication", "Feedback", "Responsabilités", "Confiance", "Respect", "Éthique professionnelle", "Télétravail", "Bien-être au travail", "Satisfaction au travail", "Rétroaction", "Flexibilité", "Horaires", "Salaire", "Congés", "Retraite", "Balance vie-travail", "Relations professionnelles"],
-        "Santé": ["Bien-être", "Exercice", "Alimentation", "Sommeil", "Médecine", "Hôpital", "Stress", "Santé mentale", "Récupération", "Prévention", "Hygiène de vie", "Nutrition", "Fitness", "Yoga", "Méditation", "Thérapie", "Reiki", "Acupuncture", "Homéopathie", "Santé publique", "Épidémie", "Pandémie", "Vaccination", "Traitement", "Chirurgie", "Convalescence", "Maladie", "Diagnostic", "Symptômes", "Réhabilitation", "Physiothérapie", "Dentiste", "Ophtalmologiste", "Cardiologue", "Pédiatre", "Gynécologue", "Urologue", "Dermatologue", "Psychologue", "Psychiatre", "Soutien", "Compassion", "Soins palliatifs", "Soin de soi", "Relaxation", "Spiritualité", "Plantes médicinales", "Herboristerie", "Soin infirmier", "Praticien"],
-        "Loisirs": ["Sports", "Lecture", "Voyages", "Musique", "Cinéma", "Jeux vidéo", "Photographie", "Cuisine", "Jardinage", "Peinture", "Randonnée", "Camping", "Pêche", "Chasse", "Équitation", "Natation", "Surf", "Plongée", "Ski", "Snowboard", "Yoga", "Danse", "Théâtre", "Concerts", "Festivals", "Expositions", "Parcs d'attractions", "Shopping", "Bricolage", "Décoration", "Mode", "Beauté", "Automobile", "Motocyclisme", "Cyclisme", "Voyage en train", "Voyage en avion", "Croisières", "Montagne", "Plage", "Forêt", "Désert", "Villes", "Villages", "Cultures", "Traditions", "Langues", "Histoires", "Art"]
+    let topics = [
+        "Famille": ["Parents", "Enfants", "Grand-parents", "Frères et Sœurs", "Cousins", "Oncles et Tantes"],
+        "Amour": ["Partenaire", "Amis", "Romance", "Coup de foudre", "Mariage", "Relations"],
+        "Travail": ["Collègues", "Projet", "Carrière", "Bureau", "Télétravail", "Employeur"],
+        "Santé": ["Exercice", "Nutrition", "Bien-être", "Médecine", "Repos", "Santé mentale"],
+        "Loisirs": ["Sport", "Musique", "Voyage", "Lecture", "Cuisine", "Art"]
     ]
 
     var body: some View {
         VStack {
-            Spacer() // Ajout de Spacer pour descendre le contenu vers le bas
-
-            Text("Écriture")
-                .font(.largeTitle)
-                .padding()
-
-            HStack {
-                Text("Catégorie:")
-                    .font(.headline)
-                Picker("Choisissez une catégorie", selection: $selectedCategory) {
-                    ForEach(categories, id: \.self) { category in
-                        Text(category).tag(category)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-            }
-            .padding()
-
-            HStack {
-                Text("Thème:")
-                    .font(.headline)
-                Picker("Choisissez un thème", selection: $selectedTheme) {
-                    if let themesForCategory = themes[selectedCategory] {
-                        ForEach(themesForCategory, id: \.self) { theme in
-                            Text(theme).tag(theme as String?)
+            if showSavedEntries {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(savedEntries.sorted(by: >), id: \.key) { key, value in
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(key)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                Text(value)
+                                    .foregroundColor(.white)
+                                Divider()
+                            }
+                            .padding()
+                            .background(Color.pastelPink.opacity(0.8))
+                            .cornerRadius(10)
+                            .padding(.horizontal)
                         }
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
-            }
-            .padding()
-
-            if let selectedTheme = selectedTheme {
-                TextEditor(text: $text)
-                    .frame(height: 300)
-                    .border(Color.gray, width: 1)
-                    .padding()
-                    .background(Color.white.opacity(0.8))
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-                    .onAppear {
-                        self.text = savedTexts[selectedTheme] ?? ""
+                .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
+                .navigationTitle("Écrits Sauvegardés")
+                .toolbar {
+                    Button(action: { showSavedEntries.toggle() }) {
+                        Image(systemName: "arrow.backward")
+                            .foregroundColor(.white)
                     }
-
-                Button(action: {
-                    self.saveText(for: selectedTheme)
-                }) {
-                    Text("Enregistrer")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.top, 20)
+                }
+            } else {
+                VStack {
+                    Spacer(minLength: 150)
+                    
+                    Text("Écriture Quotidienne")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.bottom, 20)
+                    
+                    if let selectedCategory = selectedCategory {
+                        if let selectedTopic = selectedTopic {
+                            Text("Sujet: \(selectedTopic)")
+                                .font(.title2)
+                                .padding()
+                                .background(Color.pastelPink.opacity(0.8))
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                            
+                            TextEditor(text: $writingText)
+                                .padding()
+                                .background(Color.pastelPink.opacity(0.6))
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+                                .padding(.horizontal)
+                                .frame(maxHeight: 200)
+                            
+                            Button(action: saveEntry) {
+                                Text("Enregistrer")
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 5)
+                                    .padding(.horizontal)
+                            }
+                            
+                            Button(action: { self.selectedTopic = nil }) {
+                                Text("Changer de Sujet")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                            }
+                        } else {
+                            VStack {
+                                Text("Choisissez un sujet")
+                                    .font(.title2)
+                                    .padding()
+                                
+                                ScrollView {
+                                    VStack(spacing: 10) {
+                                        ForEach(topics[selectedCategory] ?? [], id: \.self) { topic in
+                                            Button(action: {
+                                                self.selectedTopic = topic
+                                            }) {
+                                                Text(topic)
+                                                    .font(.headline)
+                                                    .foregroundColor(.white)
+                                                    .padding()
+                                                    .background(Color.pastelPink.opacity(0.8))
+                                                    .cornerRadius(10)
+                                            }
+                                            .padding(.horizontal)
+                                        }
+                                    }
+                                }
+                                
+                                Button(action: { self.selectedCategory = nil }) {
+                                    Text("Changer de Catégorie")
+                                        .foregroundColor(.blue)
+                                        .padding()
+                                }
+                            }
+                        }
+                    } else {
+                        VStack {
+                            Text("Choisissez une catégorie")
+                                .font(.title2)
+                                .padding()
+                            
+                            ScrollView {
+                                VStack(spacing: 10) {
+                                    ForEach(categories, id: \.self) { category in
+                                        Button(action: {
+                                            self.selectedCategory = category
+                                        }) {
+                                            Text(category)
+                                                .font(.headline)
+                                                .foregroundColor(.white)
+                                                .padding()
+                                                .background(Color.pastelPink.opacity(0.8))
+                                                .cornerRadius(10)
+                                        }
+                                        .padding(.horizontal)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
+                .cornerRadius(20)
+                .padding()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
+                .edgesIgnoringSafeArea(.all)
+                .toolbar {
+                    Button(action: { showSavedEntries.toggle() }) {
+                        Image(systemName: "book")
+                            .foregroundColor(.white)
+                    }
                 }
             }
-
-            Spacer()
-
-            Button(action: {
-                self.showAllTexts.toggle()
-            }) {
-                Text("Voir tous les textes")
-                    .font(.footnote)
-                    .foregroundColor(.blue)
-            }
-            .padding(.bottom, 20)
-            .sheet(isPresented: $showAllTexts) {
-                AllTextsView(savedTexts: self.savedTexts, onDelete: self.deleteText, onEdit: self.editText)
-            }
-
-            Spacer()
-        }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
-        .edgesIgnoringSafeArea(.all)
-        .onAppear {
-            self.loadSavedTexts()
-        }
-    }
-
-    func loadSavedTexts() {
-        if let data = UserDefaults.standard.data(forKey: "savedTexts"),
-           let loadedTexts = try? JSONDecoder().decode([String: String].self, from: data) {
-            savedTexts = loadedTexts
-        }
-    }
-
-    func saveText(for theme: String) {
-        savedTexts[theme] = text
-        if let data = try? JSONEncoder().encode(savedTexts) {
-            UserDefaults.standard.set(data, forKey: "savedTexts")
-        }
-    }
-
-    func deleteText(for theme: String) {
-        savedTexts.removeValue(forKey: theme)
-        if let data = try? JSONEncoder().encode(savedTexts) {
-            UserDefaults.standard.set(data, forKey: "savedTexts")
         }
     }
     
-    func editText(for theme: String) {
-        if let savedText = savedTexts[theme] {
-            self.text = savedText
-            self.selectedTheme = theme
-        }
-    }
-}
-
-struct AllTextsView: View {
-    @Environment(\.presentationMode) var presentationMode
-    let savedTexts: [String: String]
-    let onDelete: (String) -> Void
-    let onEdit: (String) -> Void
-
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(savedTexts.keys.sorted(), id: \.self) { key in
-                        VStack(alignment: .leading) {
-                            Text(key)
-                                .font(.headline)
-                                .padding(.top, 10)
-                            Text(self.savedTexts[key] ?? "")
-                                .padding(.bottom, 10)
-                                .onTapGesture {
-                                    self.onEdit(key)
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
-                                .contextMenu {
-                                    Button(action: {
-                                        self.onDelete(key)
-                                        self.presentationMode.wrappedValue.dismiss()
-                                    }) {
-                                        Text("Supprimer")
-                                        Image(systemName: "trash")
-                                    }
-                                }
-                        }
-                        .padding(.horizontal)
-                    }
-                }
-            }
-            .padding(.top, 20)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white)
-            .navigationBarTitle("Tous les textes", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Fermer") {
-                self.presentationMode.wrappedValue.dismiss()
-            })
-        }
+    private func saveEntry() {
+        guard let selectedTopic = selectedTopic, !writingText.isEmpty else { return }
+        savedEntries[selectedTopic] = writingText
+        UserDefaults.standard.setValue(savedEntries, forKey: "savedEntries")
+        self.writingText = ""
     }
 }
 

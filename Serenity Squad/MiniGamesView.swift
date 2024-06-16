@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MiniGame: String {
-    case game2048, flappy, sudoku, crossword, memory, hangman, wordsearch, baccalaureat, mathquiz, wordscramble, whackamole, pierrepapier, battleship, morpion
+    case game2048, flappy, sudoku, crossword, memory, hangman, wordsearch, baccalaureat, mathquiz, wordscramble, whackamole, pierrepapier, battleship, morpion, quiz
 
     var title: String {
         switch self {
@@ -26,6 +26,7 @@ enum MiniGame: String {
         case .pierrepapier: return "Pierre, papier, ciseaux!"
         case .battleship: return "Navire en vue capitaine!"
         case .morpion: return "Morpion"
+        case .quiz: return "Quiz"
         }
     }
 
@@ -45,6 +46,7 @@ enum MiniGame: String {
             case .pierrepapier: return "pierrepapier"
             case .battleship: return "battleship"
             case .morpion: return "morpion"
+            case .quiz: return "quiz"
             }
         }
 
@@ -65,6 +67,7 @@ enum MiniGame: String {
         case .pierrepapier: RockPaperScissorsView()
         case .battleship: BattleshipView()
         case .morpion: TicTacToeView()
+        case .quiz: QCMGameView()
         }
     }
 }
@@ -79,7 +82,7 @@ struct MiniGamesView: View {
 
     let games: [MiniGame] = [
         .game2048, .flappy, .sudoku, .crossword, .memory,
-        .hangman, .wordsearch, .baccalaureat, .mathquiz, .wordscramble, .whackamole, .pierrepapier, .battleship, .morpion
+        .hangman, .wordsearch, .baccalaureat, .mathquiz, .wordscramble, .whackamole, .pierrepapier, .battleship, .morpion, .quiz
     ]
 
     var body: some View {

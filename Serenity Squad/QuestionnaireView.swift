@@ -17,8 +17,7 @@ struct QuestionnaireView: View {
         Question(text: "Comment vous sentez-vous aujourd'hui ?", options: ["Bien", "Moyen", "Mal"]),
         Question(text: "Quel est votre niveau de stress ?", options: ["Faible", "Modéré", "Élevé"]),
         Question(text: "Avez-vous bien dormi ?", options: ["Oui", "Non"]),
-        Question(text: "Quelle est la source de votre stress ?", options: ["Famille", "Pensées obscures", "Travail", "Quotidien"]),
-        Question(text: "Que vous ferait du bien aujourd'hui ?", options: ["Mini-jeux", "Écriture", "Lecture"])
+        Question(text: "Quelle est la source de votre stress ?", options: ["Famille", "Pensées obscures", "Travail", "Quotidien"])
     ]
     
     var body: some View {

@@ -20,6 +20,7 @@
 		EC6AE0B32C0C99AE0082C3B3 /* Game2048View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */; };
 		EC6AE0B52C0C9F070082C3B3 /* GameFlappyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */; };
 		EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */; };
+		ECCC41BD2C1F3C7400A20BB9 /* QCMGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCC41BC2C1F3C7400A20BB9 /* QCMGameView.swift */; };
 		ECE6FC752C0D0670001BD8A7 /* WordSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */; };
 		ECE6FC772C0F839E001BD8A7 /* CrosswordPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */; };
 		ECE6FC7C2C147ABA001BD8A7 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6FC7B2C147ABA001BD8A7 /* AspectVGrid.swift */; };
@@ -78,6 +79,7 @@
 		EC6AE0B22C0C99AE0082C3B3 /* Game2048View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game2048View.swift; sourceTree = "<group>"; };
 		EC6AE0B42C0C9F070082C3B3 /* GameFlappyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlappyView.swift; sourceTree = "<group>"; };
 		EC6AE0B62C0CA6BE0082C3B3 /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		ECCC41BC2C1F3C7400A20BB9 /* QCMGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QCMGameView.swift; sourceTree = "<group>"; };
 		ECE6FC742C0D0670001BD8A7 /* WordSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearchView.swift; sourceTree = "<group>"; };
 		ECE6FC762C0F839E001BD8A7 /* CrosswordPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordPuzzleView.swift; sourceTree = "<group>"; };
 		ECE6FC7B2C147ABA001BD8A7 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				ECE6FC9B2C15E6D0001BD8A7 /* RockPaperScissorsView.swift */,
 				ECE6FC9D2C185F41001BD8A7 /* BattleshipView.swift */,
 				ECE6FC9F2C18A2AE001BD8A7 /* TicTacToeView.swift */,
+				ECCC41BC2C1F3C7400A20BB9 /* QCMGameView.swift */,
 				ECE6FCA12C1A09DC001BD8A7 /* WritingView.swift */,
 				ECE6FCA32C1A0FC3001BD8A7 /* MainMenuView.swift */,
 				EC6AE0842C0C8D440082C3B3 /* ContentView.swift */,
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE6FCA42C1A0FC3001BD8A7 /* MainMenuView.swift in Sources */,
+				ECCC41BD2C1F3C7400A20BB9 /* QCMGameView.swift in Sources */,
 				EC6AE0852C0C8D440082C3B3 /* ContentView.swift in Sources */,
 				EC6AE0B72C0CA6BE0082C3B3 /* SudokuView.swift in Sources */,
 				ECE6FC882C14800D001BD8A7 /* RGBAColor.swift in Sources */,

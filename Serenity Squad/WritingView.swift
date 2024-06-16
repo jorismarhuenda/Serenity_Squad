@@ -11,7 +11,6 @@ struct WritingView: View {
     @State private var selectedCategory = "Famille"
     @State private var selectedTheme: String?
     @State private var text = ""
-    @AppStorage("savedTexts") private var savedTextsData: Data = Data() // Utilisation d'AppStorage pour persister les données
     @State private var savedTexts: [String: String] = [:]
     @State private var showAllTexts = false
 
@@ -67,7 +66,6 @@ struct WritingView: View {
                     .cornerRadius(10)
                     .shadow(radius: 5)
                     .onAppear {
-                        self.loadSavedTexts()
                         self.text = savedTexts[selectedTheme] ?? ""
                     }
 
@@ -94,7 +92,7 @@ struct WritingView: View {
             }
             .padding(.bottom, 20)
             .sheet(isPresented: $showAllTexts) {
-                AllTextsView(savedTexts: self.savedTexts)
+                AllTextsView(savedTexts: self.savedTexts, onDelete: self.deleteText, onEdit: self.editText)
             }
 
             Spacer()
@@ -109,41 +107,77 @@ struct WritingView: View {
     }
 
     func loadSavedTexts() {
-        if let loadedTexts = try? JSONDecoder().decode([String: String].self, from: savedTextsData) {
+        if let data = UserDefaults.standard.data(forKey: "savedTexts"),
+           let loadedTexts = try? JSONDecoder().decode([String: String].self, from: data) {
             savedTexts = loadedTexts
         }
     }
 
     func saveText(for theme: String) {
         savedTexts[theme] = text
-        if let encodedData = try? JSONEncoder().encode(savedTexts) {
-            savedTextsData = encodedData
+        if let data = try? JSONEncoder().encode(savedTexts) {
+            UserDefaults.standard.set(data, forKey: "savedTexts")
+        }
+    }
+
+    func deleteText(for theme: String) {
+        savedTexts.removeValue(forKey: theme)
+        if let data = try? JSONEncoder().encode(savedTexts) {
+            UserDefaults.standard.set(data, forKey: "savedTexts")
+        }
+    }
+    
+    func editText(for theme: String) {
+        if let savedText = savedTexts[theme] {
+            self.text = savedText
+            self.selectedTheme = theme
         }
     }
 }
 
 struct AllTextsView: View {
+    @Environment(\.presentationMode) var presentationMode
     let savedTexts: [String: String]
+    let onDelete: (String) -> Void
+    let onEdit: (String) -> Void
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                ForEach(savedTexts.keys.sorted(), id: \.self) { key in
-                    VStack(alignment: .leading) {
-                        Text(key)
-                            .font(.headline)
-                            .padding(.top, 10)
-                        Text(self.savedTexts[key] ?? "")
-                            .padding(.bottom, 10)
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading) {
+                    ForEach(savedTexts.keys.sorted(), id: \.self) { key in
+                        VStack(alignment: .leading) {
+                            Text(key)
+                                .font(.headline)
+                                .padding(.top, 10)
+                            Text(self.savedTexts[key] ?? "")
+                                .padding(.bottom, 10)
+                                .onTapGesture {
+                                    self.onEdit(key)
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                                .contextMenu {
+                                    Button(action: {
+                                        self.onDelete(key)
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }) {
+                                        Text("Supprimer")
+                                        Image(systemName: "trash")
+                                    }
+                                }
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
                 }
             }
+            .padding(.top, 20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.white)
+            .navigationBarTitle("Tous les textes", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Fermer") {
+                self.presentationMode.wrappedValue.dismiss()
+            })
         }
-        .padding(.top, 20)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white)
-        .navigationBarTitle("Tous les textes", displayMode: .inline)
     }
 }
 

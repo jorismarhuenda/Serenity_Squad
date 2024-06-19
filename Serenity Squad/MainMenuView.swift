@@ -8,35 +8,42 @@
 import SwiftUI
 
 struct MainMenuView: View {
+    @State private var showMiniGames = false
+    @State private var showWriting = false
+    @State private var showRelaxation = false
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Spacer() // Ajoute un espace en haut pour déplacer le contenu vers le bas
+        VStack {
+            Spacer()
 
-                Text("Bienvenue")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
+            Text("Bienvenue")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding()
 
-                VStack(spacing: 20) {
-                    NavigationLink(destination: MiniGamesView()) {
-                        MainMenuButton(title: "Mini-jeux")
-                    }
-
-                    NavigationLink(destination: WritingView()) {
-                        MainMenuButton(title: "Écriture")
-                    }
+            VStack(spacing: 20) {
+                NavigationLink(destination: MiniGamesView(), isActive: $showMiniGames) {
+                    MainMenuButton(title: "Mini-jeux")
                 }
-                .padding(.horizontal)
+                .isDetailLink(false)
 
-                Spacer()
-                Spacer()
+                NavigationLink(destination: WritingView(), isActive: $showWriting) {
+                    MainMenuButton(title: "Écriture")
+                }
+                .isDetailLink(false)
+                
+                NavigationLink(destination: RelaxationExercisesView(), isActive: $showRelaxation) {
+                    MainMenuButton(title: "Espace détente!")
+                }
+                .isDetailLink(false)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
-            .edgesIgnoringSafeArea(.all)
+            .padding(.horizontal)
+
+            Spacer()
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Ajoute cette ligne pour éviter les superpositions de NavigationView
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.pastelPink, Color.pastelBlue]), startPoint: .top, endPoint: .bottom))
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

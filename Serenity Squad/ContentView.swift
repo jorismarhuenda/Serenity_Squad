@@ -78,7 +78,10 @@ struct ContentView: View {
                 Spacer()
                 
                 if canTakeQuestionnaire {
-                    NavigationLink(destination: QuestionnaireView()) {
+                    NavigationLink(destination: QuestionnaireView(onComplete: {
+                        canTakeQuestionnaire = false
+                        UserDefaults.standard.set(Date(), forKey: "lastQuestionnaireCompletionDate")
+                    })) {
                         Text("Commencer le questionnaire")
                             .font(.headline)
                             .foregroundColor(.white)

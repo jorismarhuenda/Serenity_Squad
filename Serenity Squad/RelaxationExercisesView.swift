@@ -118,6 +118,7 @@ struct RelaxationExercisesView: View {
 
 struct ExerciseListView: View {
     var category: Category
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -151,8 +152,7 @@ struct ExerciseListView: View {
             Spacer()
             
             Button(action: {
-                // Code to go back to the previous screen
-                // Can be implemented using environment(\.presentationMode)
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Retour")
                     .font(.headline)
